@@ -1,0 +1,2 @@
+# shebangs
+Bash exercises
