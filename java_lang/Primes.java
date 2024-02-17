@@ -17,11 +17,15 @@ public class Primes{
             return false;
         }
 
-        for (int i = 2; i < num; i++){
-            if (num % i == 0){
+        int i = 2;
+        
+        while (i < num){
+            if (num % i == 0) {
                 return false;
             }
+            i++;
         }
+    
         return true;
     }
 
