@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 // If a number is prime, number i.e, if a number is positive number and has 1 and itself only 
 // as the positive divisors
 // i.e, -1 -> false
@@ -15,7 +17,10 @@ func IsPrime(num int) bool {
 		return false
 	}
 
-	for i := 2; i < num; i++ {
+	// Optimize the loop
+	var j = int(math.Sqrt(float64(num))) + 1
+
+	for i := 2; i < j; i++ {
 		if num % i == 0{
 			return false
 		}
