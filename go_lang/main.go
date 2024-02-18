@@ -3,35 +3,21 @@ package main
 import (
 	"fmt"
 )
-// If a number is prime, number i.e, if a number is positive number and has 1 and itself only 
-// as the positive divisors
-// i.e, -1 -> false
-// 0 -> false   6 -> false
-// 1 -> false   7 -> true
-// 2 -> true    8 -> false
-// 3 -> true	9 -> false
-// 4 -> false	10 -> false
-// 5 -> true
 
-func isPrime(num int) bool {
-	if num <= 1 {
-		return false
-	}
-
-	for i := 2; i < num; i++ {
-		if num % i == 0{
-			return false
-		}
-	}
-	return true
-}
 
 func main(){
+	// IsPrime function call
 	for i := -1; i <= 10; i++ {
-		fmt.Println(isPrime(i))
+		fmt.Println(IsPrime(i))
 	}
+
+	// ArrayDiff function call
+	var emptyArray []int
+	fmt.Println(ArrayDiff([]int {1,2}, []int {1}))
+	fmt.Println(ArrayDiff(emptyArray, []int {1,2,3,4}))
+	fmt.Println(ArrayDiff([]int {1, 2, 2, 2, 3}, []int {2}))
 }
 
 
 // Create and initialize a go module -> go mod init <the package name path>
-// Run a Go function i.e, main() -> go run main.go
+// Run a Go function i.e, main() -> go run main.go <file to run>
