@@ -9,6 +9,9 @@ package main
 
 // array_diff({1, 2, 2, 2, 3}, 5, {2}, 1, *z) == {1, 3} (z == 2)
 
+import (
+	"fmt"
+)
 func ArrayDiff(a, b []int) []int {
 	var res []int
 
@@ -27,3 +30,14 @@ func ArrayDiff(a, b []int) []int {
 	}
 	return res
 }
+
+func main(){
+
+	// ArrayDiff function call
+	var emptyArray []int
+	fmt.Println(ArrayDiff([]int {1,2}, []int {1}))
+	fmt.Println(ArrayDiff(emptyArray, []int {1,2,3,4}))
+	fmt.Println(ArrayDiff([]int {1, 2, 2, 2, 3}, []int {2}))
+}
+
+// go run ArrayDiff.go

@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import(
+ "fmt"
+ "math"
+)
 
 // If a number is prime, number i.e, if a number is positive number and has 1 and itself only 
 // as the positive divisors
@@ -27,3 +30,13 @@ func IsPrime(num int) bool {
 	}
 	return true
 }
+
+
+func main(){
+	// IsPrime function call
+	for i := -1; i <= 10; i++ {
+		fmt.Println(IsPrime(i))
+	}
+}
+
+// go run IsPrime.go
