@@ -36,4 +36,38 @@ func isValidPassword(password string) bool {
 	return hasUpper && hasDigit && hasFittingLength
 }
 
+func isValidPasswordAlternate(password string) bool {
+	digits := "0123456789"
+	uppercase := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	foundDigit := false
+	foundUpper := false
+
+	if len(password) < 5 || len(password) > 12 {
+		return false
+	}
+
+	for _, val := range password {
+
+		for _, i := range digits {
+			if val == i {
+				foundDigit = true
+				break
+			}
+		}
+
+		for _, j := range uppercase {
+			if val == j {
+				foundUpper = true
+				break
+			}
+		}
+	}
+
+	if foundDigit == foundUpper {
+		return true
+	}
+
+	return false
+}
+
 func main() {}

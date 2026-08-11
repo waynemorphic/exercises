@@ -36,7 +36,7 @@ func TestIsValidPassword(t *testing.T) {
 
 	for i, test := range testCases {
 		t.Run(fmt.Sprintf("TestCase%d", i+1), func(t *testing.T) {
-			result := isValidPassword(test.password)
+			result := isValidPasswordAlternate(test.password)
 			if result != test.isValid {
 				failCount++
 				t.Errorf(`---------------------------------
