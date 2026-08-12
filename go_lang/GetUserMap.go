@@ -34,3 +34,22 @@ type user struct {
 	name        string
 	phoneNumber string
 }
+
+/*
+myMap := map[string]int
+Example: myMap[string]int{ "John": 1, "James": 2 }
+
+1. Insert an element in a map
+- key is a string, elem is an int
+myMap[key] = elem
+
+2. Get an element from a map
+elem = myMap[key]
+
+3. Delete an element from a map
+delete(myMap, key)
+
+4. Check if a key exists in a map
+elem, ok := myMap[key]
+
+*/
