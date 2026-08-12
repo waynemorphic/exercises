@@ -35,5 +35,14 @@ func WordCount(s string) map[string]int {
 func main() {
 	// go mod tidy -> Installs the TestSuite import
 	// go run WordCountMap.go
-	wc.Test(WordCount)
+	wc.Test(MorePerformantWordCount)
+}
+
+func MorePerformantWordCount(s string) map[string]int {
+	resMap := make(map[string]int)
+
+	for _, words := range strings.Fields(s) {
+		resMap[words] += 1
+	}
+	return resMap
 }
