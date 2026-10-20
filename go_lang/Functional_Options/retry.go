@@ -16,13 +16,14 @@ type Retrier struct {
 	predicate Predicate
 	hook      Hook
 	timeout   time.Duration
-	sleep     func(ctx context.Context, wait time.Duration) error
+	sleep     Sleep
 }
 
 type BackoffFunc func(attempt int) time.Duration
 type Predicate func(error) bool
 type Hook func(attempt int, err error, wait time.Duration)
 type Option func(*Retrier) error
+type Sleep func(ctx context.Context, wait time.Duration) error
 
 func New(options ...Option) (*Retrier, error) {
 	retrier := &Retrier{
